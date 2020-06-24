@@ -1,0 +1,179 @@
+
+<div class="row bg-light">
+    <!-- <div class="col-sm-1"></div> -->
+    <div class="col-sm-10">
+        <div class="col-sm-3"></div>
+<div class="col-sm-6 text-center">
+ <div class="alert alert-success col-sm-10" *ngIf="registrationsuccess;else failmessage">
+   <strong>{{registrationsuccess}} !!</strong>
+ </div>
+ <ng-template #failmessage>
+   <div class="alert alert-danger" *ngIf="regisfail">
+     <strong>{{regisfail}} !!</strong>
+   </div>
+ </ng-template>
+</div>
+<div class="col-sm-3"></div>
+        <div class="container mt-3">
+
+            <form class="form-horizontal" [formGroup]="EmpRegisterForm">
+                <div class="form-group">
+                    <label for="userName" class="col-sm-3 control-label">CompanyName</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="userName" formControlName="username" placeholder="CompanyName" class="form-control"  autofocus>
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['username'].invalid && (EmpRegisterForm.controls['username'].dirty || EmpRegisterForm.controls['username'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['username'].errors.required">
+                        username is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password*</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" formControlName="password" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['password'].invalid && (EmpRegisterForm.controls['password'].dirty || EmpRegisterForm.controls['password'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['password'].errors.required">
+                        password is required.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-9">
+                        <input type="email" formControlName="mail" id="email" placeholder="mail" class="form-control" name= "email">
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['mail'].invalid && (EmpRegisterForm.controls['mail'].dirty || EmpRegisterForm.controls['mail'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['mail'].errors.required">
+                        mail is required.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" name="gender" value="Female" formControlName="gender">Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" checked id="maleRadio" name="gender" formControlName="gender" value="Male">Male
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
+                    <div class="col-sm-9">
+                        <input type="phoneNumber" id="phoneNumber" formControlName="mobile" placeholder="Phone number" class="form-control">
+                        <span class="help-block">Your phone number won't be disclosed anywhere </span>
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['mobile'].invalid && (EmpRegisterForm.controls['mobile'].dirty || EmpRegisterForm.controls['mobile'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['mobile'].errors.required">
+                        mobile is required.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="HomeTown" class="col-sm-3 control-label">HomeTown</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="HomeTown" formControlName="hometown" placeholder="Last Name" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['hometown'].invalid && (EmpRegisterForm.controls['hometown'].dirty || EmpRegisterForm.controls['hometown'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['hometown'].errors.required">
+                        hometown is required.
+                    </div>
+                </div>
+                
+              
+                <div class="form-group">
+                    <label for="exp" class="col-sm-3 control-label">Experience </label>
+                    <div class="col-sm-9">
+                        <input type="number" id="exp" formControlName="experience" placeholder="Exp. In Years" class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['experience'].invalid && (EmpRegisterForm.controls['experience'].dirty || EmpRegisterForm.controls['experience'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['experience'].errors.required">
+                        experience is required.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Marital Status</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio"  id="singleRadio" formControlName="maritalStatus" name="maritalStatus" value="Single" >Single
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="marriedRadio" name="maritalStatus" formControlName="maritalStatus" value="Married" checked>Not-Single
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="languages" class="col-sm-3 control-label">Languages</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="languages" formControlName="languages"  class="form-control" value="English" >
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['languages'].invalid && (EmpRegisterForm.controls['languages'].dirty || EmpRegisterForm.controls['languages'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['languages'].errors.required">
+                        languages is required.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clocation" class="col-sm-3 control-label">Address</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="clocation" formControlName="currentLocation" placeholder="Enter your Address" class="form-control" >
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['currentLocation'].invalid && (EmpRegisterForm.controls['currentLocation'].dirty || EmpRegisterForm.controls['currentLocation'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['currentLocation'].errors.required">
+                        currentLocation is required.
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label for="reasons" class="col-sm-3 control-label">About</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="reasons" formControlName="reasonsforleaving" placeholder="Not Mandatory" class="form-control"  autofocus>
+                    </div>
+                </div>
+                <div *ngIf="EmpRegisterForm.controls['reasonsforleaving'].invalid && (EmpRegisterForm.controls['reasonsforleaving'].dirty || EmpRegisterForm.controls['reasonsforleaving'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="EmpRegisterForm.controls['reasonsforleaving'].errors.required">
+                        reasonsforleaving is required.
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="registeremployee()" [disabled]="!EmpRegisterForm.valid">Register</button>
+            </form> <!-- /form -->
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>

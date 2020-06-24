@@ -1,0 +1,122 @@
+<div class="row bg-light">
+    <!-- <div class="col-sm-1"></div> -->
+    <div class="col-sm-10">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 text-center">
+            <div class="alert alert-success col-sm-10" *ngIf="registrationsuccess;else failmessage">
+                <strong>{{registrationsuccess}} !!</strong>
+            </div>
+            <ng-template #failmessage>
+                <div class="alert alert-danger" *ngIf="regisfail">
+                    <strong>{{regisfail}} !!</strong>
+                </div>
+            </ng-template>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="container mt-3">
+
+            <form class="form-horizontal" [formGroup]="RecruiterRegisterForm">
+                <div class="form-group">
+                    <label for="companyname" class="col-sm-3 control-label">Driver UserName</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="companyname" formControlName="companyName" placeholder="UserName"
+                            class="form-control" autofocus>
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['companyName'].invalid && (RecruiterRegisterForm.controls['companyName'].dirty || RecruiterRegisterForm.controls['companyName'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['companyName'].errors.required">
+                        User Name is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password*</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" formControlName="password" placeholder="Password"
+                            class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['password'].invalid && (RecruiterRegisterForm.controls['password'].dirty || RecruiterRegisterForm.controls['password'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['password'].errors.required">
+                        Password is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-9">
+                        <input type="email" formControlName="companyMail" id="email" placeholder="mail"
+                            class="form-control" name="email">
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['companyMail'].invalid && (RecruiterRegisterForm.controls['companyMail'].dirty || RecruiterRegisterForm.controls['companyMail'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['companyMail'].errors.required">
+                        Email is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry" class="col-sm-3 control-label">Address</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="industry" formControlName="industryType" placeholder="Enter your Address"
+                            class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['industryType'].invalid && (RecruiterRegisterForm.controls['industryType'].dirty || RecruiterRegisterForm.controls['industryType'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['industryType'].errors.required">
+                        Address is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry" class="col-sm-3 control-label">Phone No</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone no"
+                            class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['phone'].invalid && (RecruiterRegisterForm.controls['phone'].dirty || RecruiterRegisterForm.controls['phone'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['phone'].errors.required">
+                        Phone is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exp" class="col-sm-3 control-label">Experience </label>
+                    <div class="col-sm-9">
+                        <input type="number" id="exp" formControlName="yearsofExp" placeholder="Exp. In Years"
+                            class="form-control">
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['yearsofExp'].invalid && (RecruiterRegisterForm.controls['yearsofExp'].dirty || RecruiterRegisterForm.controls['yearsofExp'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['yearsofExp'].errors.required">
+                        Experience is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="about" class="col-sm-3 control-label">About</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="about" formControlName="About" placeholder="Not Mandatory"
+                            class="form-control" autofocus>
+                    </div>
+                </div>
+                <div *ngIf="RecruiterRegisterForm.controls['About'].invalid && (RecruiterRegisterForm.controls['About'].dirty || RecruiterRegisterForm.controls['About'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="RecruiterRegisterForm.controls['About'].errors.required">
+                        About is required.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary"  [disabled]="!RecruiterRegisterForm.valid" (click)="registerdriver()">Register</button>
+            </form> <!-- /form -->
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>

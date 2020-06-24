@@ -1,0 +1,56 @@
+<div class="container" >
+    <div class="row" *ngIf="successmsg; else nojobsmessage">
+        <table class="table" style="margin-left: -105px;">
+            <thead>
+                <tr>
+                   
+                    <th *ngFor="let key of headers">{{key}}</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of alljobs" >
+                    
+                    <td>{{job.jobRole}}</td>
+                    <td>{{job.expRequired}}</td>
+                    <td>{{job.jobType}}</td>
+                    <td>{{job.companyname}}</td>
+                    <td>
+                    <span *ngFor="let skill of job.skills">
+                        {{skill}}
+                    </span>
+                </td>
+                <td>{{job.user}}</td>
+                <td>{{job.mobile}}</td>
+                <td>{{job.driname}}</td>
+                <td>{{job.phone}}</td>
+                    <td>{{job.postedDate}}</td>
+                    <td><b>{{job.repairerapplied}}</b></td>
+                    <td><b>{{job.driverapplied}}</b></td>
+                    <td><button class="btn btn-success"  style="width:100%;height:auto;border-radius: 45px;"
+                        (click)="apply(job)">Apply</button>
+                        <!-- <small>{{job.jobDetails.postedDate}}</small> -->
+                    </td>
+                    <td><button  class="btn btn-danger" (click)="deletejob(job)">Delete</button>
+                        
+                    </td>
+                    <!-- 
+                        we need to bind the id of each job to the button,we can pass direct id or "job"
+                        object if we want. 
+                        class.selected will define a classname to tr tag when the id from the route that is optioanl
+                        parameter is true;
+                        
+                    -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #nojobsmessage>
+        <div >
+            
+            <!-- <a routerLink="/postjob">Post A Job Now</a> -->
+        </div>
+
+    </ng-template>
+    <!-- <router-outlet></router-outlet> -->
+</div>

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-6"></div>
+    <div class="col-sm-6" >
+        
+        <div class="alert alert-success" *ngIf="appliedmessage; else failedmessage">{{appliedmessage}}</div>
+        <ng-template #failedmessage>
+            <div class="alert alert-danger"  *ngIf="alreadyapplied">{{alreadyapplied}}</div>
+        </ng-template>
+    </div>
+    
+</div>
+<div class="container mt-3">
+   
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="bg-info">
+                <tr>
+                    <th *ngFor="let key of headers">{{key}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of alljobs" >
+                    
+                    <td>{{job.jobRole}}</td>
+                    <td>
+                        <span *ngFor="let skill of job.skills">
+                            {{skill}}
+                        </span>
+                    </td>
+                    <td>{{job.jobType}}</td>
+                    <td class="text-center">{{job.expRequired}}</td>
+                    <td>{{job.jobDescription}}</td>
+                    <td><button class="btn btn-info" id="apply" style="width:100%;height:auto;border-radius: 45px;" disabled
+                            >completed</button>
+                        
+                    </td>
+                    <td>
+                        
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

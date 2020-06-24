@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2>Login</h2>
+    <p>Select the respective tabs!!!</p>
+    <ul class="nav nav-tabs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exaxt : true}">
+      <li class="nav-item ">
+        <a class="nav-link " type="button"  style="cursor:pointer"  routerLink="/login/emp_login">Repairer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " style="cursor:pointer"  routerLink="/login/rec_login">Customer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " style="cursor:pointer"  routerLink="/login/dri_login">Driver</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>

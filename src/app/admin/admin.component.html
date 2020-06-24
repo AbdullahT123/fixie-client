@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <nav class=" mt-1 navbar navbar-expand-lg bg-info navbar-dark danger-color rounded">
+      <!-- Brand -->
+      <img  src="/assets/logo.png" alt="somthing" id="logobrand"><a class="navbar-brand "
+        id="logo"><B style="color: white;">Admin Panel</B></a>
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a routerLink="/admin_login/customer_info" class="nav-link p-3" >  Customer</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin_login/repairer_info" class="nav-link p-3" >  Repairer</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin_login/driver_info" class="nav-link p-3" > Driver</a>
+        </li>
+        
+        <!-- Dropdown -->
+        <li class="nav-item">
+          <a routerLink="/admin_login/customer_req" class="nav-link p-3" > <i class="fa fa-home"></i> Customer Requests</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin_login/posted_job" class="nav-link p-3" > <i class="fa fa-briefcase"></i> All Posted Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin_login/contactinfo" class="nav-link p-3" > <i class="fa fa-phone"></i> Contact Details</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin_login/completed_job" class="nav-link p-3" > <i class="fa fa-briefcase"></i> Completed Job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-3" (click)="logoutemployee()" style="cursor: pointer;">LOGOUT</a>
+        </li>
+       
+       
+       
+      </ul>
+    </nav>
+  </div>
+<!-- <h1 class="text-center mt-5">DASHBOARD</h1> -->
+<div class="container mt-2 dashboard">
+            
+    <router-outlet></router-outlet>
+</div>
