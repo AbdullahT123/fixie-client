@@ -532,6 +532,7 @@ getdriverJobs()
   };
   return this.httpCli.get(`https://fixie-server.herokuapp.com/driver/getdriver`,httpOptions);
 }
+
 getdriversJobs()
 {
   const httpOptions = {

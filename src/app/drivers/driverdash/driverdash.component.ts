@@ -8,9 +8,9 @@ import{FordrverService} from '../../fordriver.service';
   styleUrls: ['./driverdash.component.css']
 })
 export class DriverdashComponent implements OnInit {
-  data : any = {};
-  data1 : any = {};
-  data2 : any = {};
+  data : any = [];
+  data1 : any = [];
+  data2 : any = [];
 jobs:any=[];
 address:any=[];
 waitforjobs:any;
@@ -34,6 +34,7 @@ headers=['Device Name','Phone No','payment','Budget','jobDescription','','','Rep
     this.phone=localStorage.getItem('phone');
     console.log(this.phone);
     console.log(this.companyName);
+    
     this.seekerservice.getdriverJobs().subscribe(
       (response:any)=>
     {
@@ -44,6 +45,7 @@ headers=['Device Name','Phone No','payment','Budget','jobDescription','','','Rep
         this.totaljobs=response.length;
       } 
       this.data=response.data;
+      
       this.data1=response.data1;
       this.data2=response.data2;
       

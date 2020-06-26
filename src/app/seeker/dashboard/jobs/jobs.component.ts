@@ -8,7 +8,7 @@ import { ForrecruiterService } from '../../../forrecruiter.service';
 })
 export class JobsComponent implements OnInit {
   buttonDisabled:boolean = true;
-getData : any = {};
+getData : any = [];
 jobs:any=[];
 waitforjobs:any;
 appliedmessage:any;
