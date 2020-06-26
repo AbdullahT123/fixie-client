@@ -58,6 +58,8 @@ headers=['Device Name','Phone No','payment','Budget','jobDescription',''];
     );
 
   }
+
+  
   apply(jobapply:any)
   {
     this.Id=this.recservice.getpayload().id;
